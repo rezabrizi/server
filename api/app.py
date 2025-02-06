@@ -6,6 +6,11 @@ app = Flask(__name__)
 users = {"123-45-6789": {"dob": "1990-01-01"}, "987-65-4321": {"dob": "1985-05-12"}}
 
 
+@app.get("/")
+def health():
+    return jsonify({"message": "Healthy"}), 200
+
+
 @app.route("/authenticate", methods=["POST"])
 def authenticate():
     data = request.json
