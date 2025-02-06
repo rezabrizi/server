@@ -13,18 +13,7 @@ def health():
 
 @app.route("/authenticate", methods=["POST"])
 def authenticate():
-    data = request.json
-    ssn = data.get("ssn")
-    dob = data.get("dob")
-
-    if not ssn or not dob:
-        return jsonify({"message": "SSN and DOB are required"}), 400
-
-    user = users.get(ssn)
-    if user and user["dob"] == dob:
-        return jsonify({"message": "Authenticated"}), 200
-    else:
-        return jsonify({"message": "Authentication failed"}), 401
+    return jsonify({"My name is MIKE"}), 200
 
 
 if __name__ == "__main__":
