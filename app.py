@@ -13,7 +13,7 @@ def health():
 
 @app.route("/authenticate", methods=["POST"])
 def authenticate():
-    return jsonify({"My name is MIKE"}), 200
+    return jsonify({"name": "My name is MIKE"}), 200
 
 
 if __name__ == "__main__":
